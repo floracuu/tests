@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="base.css" />
+		<title></title>
+		<style>
+			html{
+				font-size:20px; 
+			}
+			header{
+				height:4.2rem;
+				background:#483828;
+				color:white;
+				display:flex;
+				align-items:center;
+				position:fixed;
+				top:0;
+				left:0;
+				right:0;
+				justify-content:space-between;
+				padding:0 1rem;
+				z-index:1;
+			}
+			#city{ 
+				padding-right:1.5rem;
+				font-size:1.7rem;
+				background:url(img/jt.png) no-repeat right center/1.3rem .6rem;
+			 
+			}
+			#search{
+				width:20rem;
+				height:2.5rem;
+				/*前面的背景会遮挡后面的背景*/
+				background: url(img/fdj.png) no-repeat 0.5rem center/1.8rem 1.7rem,url(img/ss.png) no-repeat center/100% 100%;
+				/*line-height:2.5rem;*/
+				position:relative;
+			}
+			#search input{
+				position:absolute;
+				left:0;
+				bottom:0.4rem;
+				left:3rem;
+				margin:auto;
+				width:80%;
+				background:transparent;
+				font-size:1.1rem;
+				color:#c3ad88;
+			}
+			/*专门用于修改placeholder的伪类*/
+			#search input::-webkit-input-placeholder{
+				color:#c3ad88;
+			}
+			#bell{
+				width:1.65rem;
+				height:2.2rem;
+				background:url(img/xx.png) no-repeat 0 0/100% 100%;
+			}
+			/*section部分------------------------------------------------*/ 
+			section{
+				background:#ebeae4; 
+				margin-bottom:4.2rem;
+			} 
+			#mainpic{
+				position:relative;
+			}
+			#mainpic img{
+				margin-top:4.2rem;
+				width:100%;
+				
+			}
+			#mainpic p{
+				width:18.6rem;
+				height:2rem;
+				display:inline-block;
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:0;
+				right:0;
+				margin:auto;
+				font-size:2rem;
+				color:white;
+				font-weight:bolder;
+			}
+			#mainpic .an{
+				width:7.85rem;
+				top:6rem;
+				font-size:1rem;
+				font-weight:normal;
+				border:1px solid white;
+				padding-left:0.5rem;
+				border-radius:0.65rem;
+			}
+			#tuoyuan{
+				display:inline-block;
+				width:5.9rem;
+				position:absolute;
+				bottom:2rem;
+				left:0;
+				right:0;
+				margin:auto;
+			}
+			#tuoyuan img{
+				width:0.75rem;
+				padding-right:1rem;
+			}
+			#mqg{
+				margin-top:1rem;
+				background:white;
+				padding-bottom:0.9rem;
+			}
+			#box2{
+				display:flex;
+				justify-content:space-around;
+			}
+			#mqg #m{
+				width:44%;
+			} 
+			#mqg p{
+				font-size:1.2rem;
+				color:#a9a9a9;
+				padding:1rem 0;
+			}
+			#mqg img{
+				width:100%;
+			}
+			#mqg h3{
+				display:inline-block; 
+				margin-left:1.5rem;
+				color:#6ab439;
+				font-size:1.3rem;
+				font-weight:normal;
+				padding-top:1.4rem;
+			}
+			#m .djs1,#m .djs2{
+				display:inline-block;
+				word-spacing:1.85rem; 
+				padding-left:2.2rem;
+				padding-bottom:0.55rem;
+				font-size:1.5rem;
+				width:6.1rem;
+				height:2.25rem;
+				background:url(img/xiaoshi.png) no-repeat 0 0/2.1rem 2.25rem,url(img/fenzhong1.png) no-repeat 2.65rem 0/2.1rem 2.25rem,url(img/miao1.png) no-repeat 5.45rem 0/2.1rem 2.25rem;
+			}
+			#m .djs2{
+				background:url(img/xiaoshi.png) no-repeat 0 0/2.1rem 2.25rem,url(img/fenzhong2.png) no-repeat 2.65rem 0/2.1rem 2.25rem,url(img/miao2.png) no-repeat 5.45rem 0/2.1rem 2.25rem;
+			}
+			#m .jq{
+				float:right;
+				font-size:1.3rem;
+				color:red;
+			}
+			/*菜品--------------*/
+			#cp{
+				margin-top:1rem;
+				background:white;
+			}
+			#cp h3{
+				font-size:1.3rem;
+				font-weight:normal;
+				padding:1.4rem 0 1rem 1.45rem;
+				color:#77ba4e;
+				display:inline-block;
+			}
+			#cp a{
+				color:grey;
+				float:right;
+				padding:1.3rem 1.5rem 0 0;
+				font-size:1.2rem;
+			}
+			#box3{
+				display:flex;
+				border-top:2px solid #ebeae4;
+				/*position:relative;*/ 
+			}
+			
+			footer .gwc2{
+				position:absolute;
+				right:0; 
+				bottom:10rem; 
+				width:6rem;
+			}
+			footer .gwc1{
+				position:absolute; 
+				right:1.6rem;
+				bottom:11rem; 
+				width:3.5rem;
+			}
+			#box3 .np{
+				width:38.6%;
+				height:34%;
+			}
+			#box3>div{
+				width:61.2%; 
+			}
+			#cp .ytp{
+				width:100%;
+			}
+			 
+			#box3 .sw{
+				width:50%;
+			}
+			#box3 p{
+				font-size:1.35rem;
+				position:absolute;
+				color:white;
+			}
+			#box3 .p1{
+				margin-top:1rem;
+				left:1.5rem;
+			}
+			#box3 .p2{
+				margin-top:2.8rem;
+				left:1.5rem;
+			}
+			#box3 .p3{
+				margin-top:1rem;
+				left:14.5rem;
+			}
+			#box3 .p4{
+				margin-top:2.8rem;
+				left:14.5rem;
+			}
+			#box3 .p5{
+				margin-top:7rem;
+				left:14.5rem;
+			}
+			#box3 .p6{
+				margin-top:8.8rem;
+				left:14.5rem;
+			}
+			#box3 .p7{
+				margin-top:7rem;
+				left:24.5rem;
+			}
+			#box3 .p8{
+				margin-top:8.8rem;
+				left:24.5rem;
+			}
+			footer{
+				height:4.2rem;
+				position:fixed;
+				background:#483828;
+				bottom:0;
+				left:0;
+				right:0;
+				display:flex;
+				justify-content:space-around;
+				align-items:center;
+				/*text-align:center;*/
+				color:white;
+			}
+			footer div img{
+				height:1.7rem;
+				margin-top:0.3rem;
+			}
+			
+			@media only screen and (min-width: 760px){
+				#box3 .p3,#box3 .p4{ 
+					left:16.5rem;
+				} 
+				#box3 .p5{
+					margin-top:8rem;
+					left:16.5rem;
+				}
+				#box3 .p6{
+					margin-top:9.8rem;
+					left:16.5rem;
+				}
+				#box3 .p7{
+					margin-top:8rem;
+					left:27.5rem;
+				}
+				#box3 .p8{
+					margin-top:9.8rem;
+					left:27.5rem;
+				}
+				
+			}
+			@media only screen and (max-width: 450px) {
+				html{
+					font-size:12px;
+				}
+				/*footer p{
+					font-size:1.2rem;
+				}*/
+			}
+			@media only screen and (max-width: 380px){
+				html{
+					font-size:10px;
+				}
+				 #city{
+					font-size:1rem;
+				}
+				#search{
+					width:20rem;
+				} 
+				#mainpic p{
+					width:15.3rem;
+				}
+				#box3 .p3,#box3 .p4{
+				  	left:12rem;
+				}
+				#box3 .p5{
+					margin-top:6rem;
+					left:12rem;
+				}
+				#box3 .p6{
+					margin-top:7.8rem;
+					left:12rem;
+				}
+				#box3 .p7{
+					margin-top:6rem;
+					left:21.5rem;
+				}
+				#box3 .p8{
+					margin-top:7.8rem;
+					left:21.5rem;
+				}
+			}
+			@media only screen and (min-width: 760px){
+				#mainpic .an{
+					padding-top: 12px;
+				}
+				footer p{
+					font-size:0.9rem;
+				}
+			}
+			/*超小屏幕手机*/
+			@media only screen and (max-width: 350px){ 
+				#city{
+					font-size:1rem;
+				}
+				#mainpic p{
+					width:15.3rem;
+				}
+				#search{
+					width:15rem;
+				}
+				#box3 .p3,#box3 .p4{
+				  	left:11.5rem;
+				}
+				#box3 .p5{
+					margin-top:6rem;
+					left:12rem;
+				}
+				#box3 .p6{
+					margin-top:7.8rem;
+					left:12rem;
+				}
+				#box3 .p7{
+					margin-top:6rem;
+					left:19.5rem;
+				}
+				#box3 .p8{
+					margin-top:7.8rem;
+					left:19.5rem;
+				}
+			}
+			@media only screen and (min-width: 1020px){
+				#box3 .p3,#box3 .p4{ 
+					left:27.5rem;
+				} 
+				#mainpic .an{
+					padding-top: 0.6rem;
+				}
+				#box3 .p5{
+					margin-top:16rem;
+					left:27.5rem;
+				}
+				#box3 .p6{
+					margin-top:17.8rem;
+					left:27.5rem;
+				}
+				#box3 .p7{
+					margin-top:16rem;
+					left:48rem;
+				}
+				#box3 .p8{
+					margin-top:17.8rem;
+					left:48rem;
+				}
+				footer p{
+					font-size:0.9rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+			<header>
+				<div id="city">北京</div>
+				<div id="search">
+					<input type="search" placeholder="搜索食材菜品"/>
+				</div>
+				<div id="bell"></div>
+			</header>
+			<section>
+				<div id="mainpic">
+					<img src="img/zp.png" alt="" />
+					<div>
+						<p>吃三文鱼的正确姿势</p>
+						<p class="an">早餐来点啥？？</p>
+						<div id="tuoyuan">
+							<img src="img/t1.png" alt="" class="ty1"/>
+							<img src="img/t2.png" alt="" class="ty2"/>
+							<img src="img/t1.png" alt="" class="ty3"/>
+						</div>
+						
+					</div>
+				</div>
+				<div id="mqg">
+					<h3>免抢购</h3>
+					<div id="box2">
+						<div id="m">
+							<p>精选延庆生态胡萝卜600g</p>
+							<div class="djs1">: :</div><div class="jq">￥4.20</div>
+							<img src="img/hlb.png" alt="" />
+						</div>
+						<div id="m">
+							<p>精选延庆生态黄瓜600g</p>
+							<div class="djs2">: :</div><div class="jq">￥9.90</div>
+							<img src="img/hg.png" alt="" />
+						</div>
+					</div> 
+				</div>
+				<div id="cp">
+					<h3>菜品精选</h3>
+					<a href="###">查看更多</a>
+					<div id="box3">
+						<img src="img/np.png" alt="" class="np"/>
+						<div> 
+							<img src="img/ytp.png" alt="" class="ytp"/>
+							<img src="img/nrm.png" alt="" class="sw"/><img src="img/zys.png" alt="" class="sw"/>
+						</div>
+
+						<p class="p1">麻辣牛排</p>
+						<p class="p2">￥35</p>
+						<p class="p3">香嫩樱桃派</p>
+						<p class="p4">￥23</p>
+						<p class="p5">白菜牛肉面</p>
+						<p class="p6">￥30</p>
+						<p class="p7">牛肉芝士丸</p>
+						<p class="p8">￥23</p>
+					</div>	
+				</div>
+			</section>
+			
+			<footer>
+				<img src="img/gwc2.png" alt="" class="gwc2"/>
+				<img src="img/gwc.png" alt="" class="gwc1"/>
+				<div>
+					<img src="img/home.png" alt="" />
+					<p>主页</p>
+				</div>
+				<div>
+					<img src="img/sc.png" alt="" />
+					<p>商城</p>
+				</div>
+				<div>
+					<img src="img/xc.png" alt="" />
+					<p>选菜</p>
+				</div>
+				<div>
+					<img src="img/fx.png" alt="" />
+					<p>发现</p>
+				</div>
+				<div>
+					<img src="img/wd.png" alt="" />
+					<p>我的</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
