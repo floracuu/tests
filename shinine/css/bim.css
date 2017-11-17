@@ -1,0 +1,165 @@
+
+#body {
+	padding-top: 67.19px;
+}
+
+#sec1,
+#sec2,
+#sec3,
+#sec4,
+#sec5 {
+	background: #e5e5e5;
+	color: #616161;
+	display: flex;
+	justify-content: center;
+	/*border: 1px solid red;*/
+}
+
+#sec2,
+#sec4 {
+	background: white;
+}
+
+.box {
+	width: 75%;
+	/*border: 1px solid blue;*/
+	margin: 105.81px 0 0 0;
+	position: relative;
+	height: 478.31px;
+}
+
+#sec2 .box,#sec5 .box {
+	margin-top: 0;
+	height: 655px;
+}
+
+#sec3 .box {
+	height: 545.09px;
+}
+
+h2 {
+	font-size: 23px;
+	font-weight: 100;
+	line-height: 25px;
+	text-align: center;
+	border: 1px solid #616161;
+	border-radius: 7px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+
+#sec2 h3 {
+	padding-top: 132px;
+}
+
+h3 {
+	font-size: 23px;
+	font-weight: 100;
+	line-height: 33px;
+	display: inline-block;
+}
+
+.box p {
+	padding: 15px 0;
+	font-size: 15.3px;
+	line-height: 22px;
+	width: 39.97%;
+	word-break: break-all;
+}
+
+.box>img {
+	width: 13.2%;
+}
+
+#sec2 .box>img {
+	width: 23.5%;
+}
+
+.right {
+	display: inline-block;
+}
+
+.right img {
+	width: 350px;
+	right: 0;
+	position: absolute;
+	top: -10px;
+}
+
+#sec2 .right img {
+	top: 0px;
+	right: 45px;
+}
+
+#sec3 .right img {
+	top: -10px;
+	left: -110px;
+	width: 400px;
+}
+
+#sec4 .right img {
+	top: -10px;
+	right: -68px;
+	width: 400px;
+}
+
+#sec4 .left img {
+	width: 70%;
+	padding-bottom: 6px;
+}
+
+#sec3 .left {
+	display: inline-block;
+	width: 69.2%;
+	position: absolute;
+	right: 0;
+	top: 85px;
+	/*border: 1px solid red;*/
+}
+
+#sec3 .left img {
+	width: 45.6%;
+}
+
+#sec4 .box,
+#sec5 .box {
+	position: relative;
+	height: 565px;
+}
+
+#sec4 .box #pic {
+	margin-top: -108px;
+	margin-left: -59px;
+	width: 400px;
+}
+
+#sec4 .left {
+	position: absolute;
+	/*border: 1px solid blue;*/
+	width: 36%;
+	top: 82.2px;
+	left: 100px;
+	/*margin:82.2px 0 0 100px;*/
+	z-index: 10;
+}
+
+#sec4 .left p {
+	width: 80%;
+}
+
+#sec5 .right img {
+	width: 400px;
+	margin-right: -12px;
+	padding-top: 8px;
+}
+
+#sec5 .left {
+	/*border: 1px solid blue;*/
+	width: 41%;
+	margin-top: 120px;
+}
+
+#sec5 .left p {
+	width: 80%;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/page1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/page234.css"/>
+		<title></title> 
+	</head>
+	
+	<body> 
+		<div id="box3">
+			<img src="img/arrow-up.png" alt="" />
+		</div>
+		<div id="box4">
+			<img src="img/music-on.png" alt="" />
+			<audio src="music/bg.mp3"   autoplay loop preload="matadata"></audio>
+		</div> 
+		
+		<div id="fullpage">
+			<div class="section" id="sec1">
+				<div id="liuxing">
+					<img src="img/p01-star01.png"/>
+					<img src="img/p01-star02.png"/>
+					<img src="img/p01-star03.png"/> 
+				</div>
+				 
+				<div id="box">
+					<img src="img/p01-top01.png" alt="" />
+					<img src="img/p01-top02.png" alt="" />
+					<img src="img/p01-top03.png" alt="" />
+					<img src="img/p01-top04.png" alt="" /> 
+					<img src="img/p01-top05.png" alt="" />
+					<img src="img/p01-top06.png" alt="" />
+					<img src="img/p01-top07.png" alt="" /> 
+					<img src="img/p01-top08.png" alt="" />
+					<img src="img/p01-top09.png" alt="" />
+					<img src="img/p01-top10.png" alt="" />
+					<img src="img/p01-top11.png" alt="" />
+					<img src="img/p01-top12.png" alt="" />
+					<img src="img/p01-top13.png" alt="" />
+					<img src="img/p01-top14.png" alt="" />
+					
+				</div>
+				<div id="box2">
+					<img src="img/p01-shining01.png" alt="" />
+					<img src="img/p01-shining02.png" alt="" />
+					<img src="img/p01-bottom01.png" alt="" />
+				</div> 
+			</div>
+			
+			<div class="section" id="sec2">
+				<img src="diqiu/1.jpg" alt="" />
+				<div id="box31">
+					<img src="img/p02-w01.png" alt="" />
+					<img src="img/p02-w02.png" alt="" /> 
+				</div>
+			</div>
+			<div class="section" id="sec3">
+				<img src="img2/p03-b01.png" alt="" />
+				<img src="img2/p03-b02.png" alt="" />
+				<img src="img2/p03-b03.png" alt="" />
+				<img src="img2/p03-b04.png" alt="" />
+				<img src="img2/p03-b05.png" alt="" />
+				<img src="img2/p03-s01.png" alt="" />
+				<img src="img2/p03-s02.png" alt="" />
+				<img src="img2/p03-s03.png" alt="" />
+			</div>
+			<div class="section" id="sec4">
+				<img src="img2/p04-points.png"/>
+				<img src="img2/p04-lines.png" alt="" />
+				<div class="centerR"></div>
+				<img src="img2/p04-words.png" alt="" id="word"/>
+				<img src="img2/p04-taptip.png" alt="" id="txshow"/>
+				<div id="touxiang">
+					<img src="img2/p04-p01-d.png" big="img2/p04-p01.png"/>
+					<img src="img2/p04-p02-d.png" big="img2/p04-p02.png"/>
+					<img src="img2/p04-p03-d.png" big="img2/p04-p03.png"/>
+					<img src="img2/p04-p04-d.png" big="img2/p04-p04.png"/>
+					<img src="img2/p04-p05-d.png" big="img2/p04-p05.png"/>
+					<img src="img2/p04-p06-d.png" big="img2/p04-p06.png"/>
+					<img src="img2/p04-p07-d.png" big="img2/p04-p07.png"/>
+					<img src="img2/p04-p08-d.png" big="img2/p04-p08.png"/>
+				</div>
+				<div id="show">
+					<img src="" id="ch"/> 
+					<img src="img2/p04-close.png"  id="close"/>
+					<img src="img2/p04-left.png" id="left"/>
+					<img src="img2/p04-right.png"  id="right"/>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/page234.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.fullpage.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript"> 
+   			$(function() {
+				$('#fullpage').fullpage({}); 
+				$("#box3 img").on("touchstart", function() {
+					//点击上移动，调用fullpage的moveSectionDown方法
+					$.fn.fullpage.moveSectionDown();
+				}); 
+			}); 
+			
+			
+			function main(){
+//				page1
+				liuxing_animation();
+				setInterval(liuxing_animation,4000);
+				box_animation(); 	
+				box2_animation();
+				box3_animation();
+				setInterval(box3_animation,1000);
+				box4_animation(); 
+//				page2
+				diqiu();
+				shake();
+  				setInterval(shake,10000);
+//				Page3
+  				shanshuo();
+  				//page4
+  				txAnimate();
+  				clickImg();
+			}
+			main();
+		</script>
+	</body>
+</html>

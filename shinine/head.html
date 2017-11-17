@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/head.css"/>
+	</head>
+	<body>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<div id="head"> 
+			<div id="j_nav">
+				<img src="img/shininglogo.png" alt="" />
+				<ul id="nav"> 
+					<li><a href="index.html" target = "blank">Home</a></li>
+					<li><a href="about.html" target="blank">About</a></li>
+					<li><a href="rending.html" target="blank">Rendering</a></li>
+					<li><a href="3d.html" target="blank">3D Animation</a></li>
+					<li><a href="Bim.html" target="blank">Bim</a></li>
+					<li><a href="contact.html" target="blank">Contact</a></li>
+				</ul>
+			</div> 
+			 
+		</div>
+		<script type="text/javascript">
+			$("#j_nav ul li a").css("width",function(){ 
+				$(this).width($(this).width()+10);
+			});
+			$("#j_nav ul li").mouseover(function(){
+				var flag = Boolean( $(this).hasClass("b") );
+				if(!flag){
+					$(this).children("a").addClass("b");
+				}
+			});
+			$("#j_nav ul li").mouseout(function(){
+				$(this).children("a").removeClass("b"); 
+			});
+			 
+			//点击加边框
+			function addBorder(){
+				var a=window.parent.document.title; 
+				console.log(a);
+	 			for(var i=0;i<6;i++){
+	 				if(a==i){ 
+						$("#j_nav ul li").eq(i).addClass("b"); 
+					}
+	 			}
+			}
+			
+ 			addBorder();
+		</script>
+	</body>
+</html>

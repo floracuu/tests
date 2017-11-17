@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>0</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/head.css"/>
+		<style type="text/css"> 
+			#iframe2{ 
+				top:588.53px; 
+			}
+/*--------------body--------------------------------------*/
+			#body{ 
+				position:absolute;
+				width:980px; 
+				left:0;
+				right:0;
+				margin:auto;
+				padding-top:67.19px;
+			}
+			#body ul{ 
+				display:flex; 
+			}
+			#body ul li p{
+				font-size:0.8rem;
+				padding-left:19.594px;
+				padding-top:7.5px;
+				width:333.19px;
+			}
+			#body ul li h3{
+				padding-left:19.594px;
+				padding-top:15px; 
+				 width:333.19px;
+			}
+			#body ul img{
+				 width:588px;
+			}   
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入头部-->
+		<iframe id="iframe1" src="head.html" width="100%" height="67.19px" scrolling="no"></iframe>
+		<div id="body">
+			<ul id="ul1">
+				<li><img src="img/home_pic_one.png" alt="" /></li>
+				<li></li>
+				<li>
+					<h3>RENDERINGS</h3>
+					<p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Designa</p>
+				</li>
+			</ul>
+			<ul id="ul2">
+				<li>
+					<h3>BIM</h3>
+					<p>Model Completion、Clash Detection、MEP Integration、Curtain Wall Remedying、BIM Consulting</p>
+				</li>
+				<li></li>
+				<li><img src="img/home_pic_two.png" alt="" /></li>
+			</ul>
+			<ul id="ul3">
+				<li><img src="img/homes_pic_three.png" alt="" /></li>
+				<li></li>
+				<li>
+					<h3>3D ANIMATION</h3>
+					<p>Real estate advertising animation Design scheme Animation Corporate promotional Animation</p>
+				</li>
+			</ul>
+		</div>
+	    <!--引入尾部-->
+	    <iframe id="iframe2" src="foot.html" width="100%" height="150px" scrolling="no"></iframe>
+
+		<script type="text/javascript"> 
+			//改变图片颜色
+			$("#body ul").mouseover(function(){ 
+				//获取当前图片名
+				var imgName = $(this).find("img").get(0).src.replace(".png","");
+				$(this).find("img").get(0).src=imgName+"_h.png"
+				$(this).find("li").eq(1).css("background","#CFDB00");
+			});
+			$("#body ul").mouseout(function(){ 
+				//获取当前图片名
+				var imgName = $(this).find("img").get(0).src.replace("_h.png",".png");
+				$(this).find("img").get(0).src=imgName;
+				$(this).find("li").eq(1).css("background","rgb(176,176,176)");
+			});
+			$("#body").children().css({ 
+				background:function(){
+					($(this)).find("li").eq(1).css({
+						background:"rgb(176,176,176)",
+						width:19.19,
+						height:$(this).prevUntil("li"),
+					}) 
+				} 
+			});
+			         
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#iframe1{
+				border-bottom:0.5px solid #ccc ;
+			}
+			#body{
+				position:relative;
+				background: black;
+				padding-top:67.19px;
+				/*border:2px solid red;*/
+			}
+			#body img{
+				width:90%;
+				padding-left:5%;
+			}
+			#mask{
+				position:absolute;
+				background:rgba(0,0,0,0.8);
+				bottom:0;
+				width:100%;
+				height:10%;
+				display:flex;
+				align-items:center;/*垂直居中*/ 
+			}
+			#mask p{
+				position:absolute;
+				left:0;
+				right:0;
+				color:#b4b4b4;
+				font-size:25px; 
+				text-align: center;
+			}
+			#pics{
+				width:90%; 
+				margin-left:5%; 
+				padding-top:20px;
+			}
+			#pics ul{
+				overflow:hidden; 
+			}
+			#pics ul li{ 
+				float:left;
+				width:30%; 
+			}
+			#pics ul li img{ 
+				width:100%; 
+			}
+			/*2,5,8  3,6,9*/  
+			#pics ul li:nth-child(3n-1){
+				padding:3% 5% 0 5%;
+			}
+			#pics ul li{
+				padding-top:3%;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe id="iframe1" src="head.html" width="100%" height="67.19"></iframe>
+		<div id="body">
+			<img src="imgD/2-150Z2105915292.jpg" alt="" />
+			<div id="mask">
+				<p>Sichuan Province-Commercial Rea</p> 
+			</div> 
+		</div>
+		<div id="pics"> 
+			<ul>
+				<li><img src="imgD/1-1510121R410H3.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121U305330.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121U33Ic.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121U04XL.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121U004292.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121T91XV.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121TTOc.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121TP0U1.jpg" alt="" /></li>
+				<li><img src="imgD/1-1510121SHX34.jpg" alt="" /></li>
+			</ul> 
+		</div>
+		<iframe id="iframe2" src="foot.html" width="100%" height=""></iframe>
+	</body>
+</html>

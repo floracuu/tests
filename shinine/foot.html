@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/foot.css"/>
+	</head>
+	<body>
+		<div id="footer">
+			<div id="share">
+				<a href="###"><img src="img/mail.jpg" alt="" /></a>
+				<ul>
+					<li><a href="###"><img src="img/facebook.jpg" alt="" /></a></li>
+					<li><a href="###"><img src="img/youtube.jpg" alt="" /></a></li>
+					<li><a href="###"><img src="img/linkedln.jpg" alt="" /></a></li>
+					<li><a href="###"><img src="img/twitter.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<p>Copyright © 1998-2015 shining Group</p>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#share img").mouseover(function(){ 
+				//获取原来的src
+				var imgName = this.src.replace(".jpg","");
+				this.src=imgName+"_h.jpg";
+			});
+			$("#share img").mouseout(function(){ 
+				//获取原来的src
+				var imgName = this.src.replace("_h.jpg",".jpg");
+				this.src=imgName;
+			});
+		</script>
+	</body>
+</html>

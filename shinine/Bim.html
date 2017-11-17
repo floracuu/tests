@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bim.css"/>
+	</head>
+	<body>
+		<iframe id="iframe1" src="head.html" width="100%" height="67.19px"></iframe>
+		<div id="body">
+			<div id="sec1">
+				<div class="box">
+					<h2>1</h2>
+					<h3>MODEL COMPLETION</h3>
+					<p>Establishing and creating the visible and multi-dimension Architecture, Structural and MEP</p>
+					<img src="imgB/BIM-p1-1.png"/><img src="imgB/BIM-p1-2.png"/><img src="imgB/BIM-p1-3.png"/>
+					<div class="right">
+						<img src="imgB/building1-half-t.png" alt="" />
+					</div>
+				 </div>
+			</div>
+			
+			<div id="sec2">
+				<div class="box">
+					<h2>2</h2>
+					<h3> CLASH DETECTION</h3>
+					<p>Completing the clash detection among various design parties,engineers and even different organisations in con struction drawings.</p>
+					<img src="imgB/BIM-p2-1.jpg"/>
+					<img src="imgB/BIM-p2-2.jpg"/>
+					<div class="right">
+						<img src="imgB/building1-half-b.png" alt="" />
+					</div>
+				 </div>
+			</div>
+			
+			<div id="sec3">
+				<div class="box">
+					<div class="right">
+						<img src="imgB/building2-half-t.png" alt="" />
+					</div>
+					<div class="left">
+						<h2>3</h2>
+						<h3>MEP INTEGRATION</h3>
+						<p>Profoundly completing the pipeline integration, design coordination and intra-organisational cooperation between Plumbing, HVAC and Electrical engineering.</p>
+						<img src="imgB/BIM-p3-1.jpg"/>
+						<img src="imgB/BIM-p3-2.jpg"/> 
+					</div> 
+				 </div>
+			</div>
+			
+			<div id="sec4">
+				<div class="box">
+					<img src="imgB/building2-half-b.png" alt="" id="pic"/>
+					<div class="left">
+						<h2>4</h2>
+						<h3>CURTAIN WALL REMEDYING</h3>
+						<p>Creating the abnormity wall based on parametric design tools, and completing detailed curtain wall nodes visibly.</p>
+						<img src="imgB/BIM-p4-1.jpg"/>
+						<img src="imgB/BIM-p4-2.jpg"/>
+					</div> 
+					<div class="right">
+						<img src="imgB/building3-half-t.png" alt="" />
+					</div>
+				 </div>
+			</div>
+			
+			<div id="sec5">
+				<div class="box"> 
+					<div class="left">
+						<h2>5</h2>
+						<h3>BIM CONSULTING</h3>
+						<p>To help you to precisely know what is BIM? How BIM use? When and who is suitably to implement BIM?</p>
+					</div> 
+					<div class="right">
+						<img src="imgB/building3-half-b.png" alt="" />
+					</div>
+				 </div>
+			</div>
+			<iframe id="iframe2" src="foot.html" width="100%" height="150px"></iframe>
+			 <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+			 <script src="js/wheel.js" type="text/javascript" charset="utf-8"></script>
+			 <script type="text/javascript">
+			 	
+			 	var index= 0;
+			 	var currentTop=0;
+			 	console.log(userAgent());
+  				if(userAgent()!="Firefox"){
+	  				//一次滚动半屏
+					document.body.mouswheel(function(event,delta){
+						if(delta>0){//谷歌：上滚动
+	//						console.log("上滚动");
+							index--;
+							if(index<0)index=0;
+							console.log(index+"次");
+							$(this).scrollTop($(window).height()/2*index);
+							return false;
+							
+						}
+						else{
+	//						console.log("下滚动");
+							index++;
+							if(index>6)index=6;
+							console.log(index+"次");
+							$(this).scrollTop($(window).height()*0.6*index);
+							return false;
+						}  
+					}); 
+				}
+			 </script>
+		</div>
+	</body>
+</html>

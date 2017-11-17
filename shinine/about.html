@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		
+		<style type="text/css">
+			#iframe1{
+				position:fixed;
+				z-index: 100;
+			}
+			#iframe2{ 
+				background: white;
+				position: absolute; 
+			} 
+			#body{
+				width:100%; 
+				padding-top:67.19px; 
+				background: #e3e3e3 url("img/world_map.png") no-repeat center 133px;
+			}
+			#body h2{ 
+				padding-top:100px;
+				padding-left:10px;
+				font-size:33px;
+				height:33px;
+				line-height:33px;
+				font-weight: 100;
+			}
+			 #body p{ 
+			 	padding-top:20px; 
+			 	padding-left:90px;
+			 	width:38.46%; 
+			 	font-size:0.747rem;
+			 	line-height:32px;
+				word-break: break-all;
+			 }
+			  #body .p2{ 
+			 	 padding-top:96px;
+			 	 padding-bottom:32px;  
+			 }
+			 #logo ul{  
+			 	overflow: hidden;
+			 	width:100%; 
+			 	padding-bottom:32px;
+			 }
+			 #logo ul li{
+			 	float:left;
+			 	padding-right:60px;
+			 	height:77px;
+			 }
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<iframe id="iframe1" src="head.html" width="100%" height="67.19px" scrolling="no"></iframe>
+		<div id="body">
+			<h2>About Us</h2>
+			<p>Shanghai Shining is a creative corporation focused on helping architects and owners turn their construction from design stages into visual images or videos, perfectly showing the essence of construction.</p>
+			<p class="p2">Since 1998,  we have finished more than 20000 architectural 3D visualizations for nearly 2000 architect firms both at home and abroad. We have used 3D technology, photography, graphic art, and architectonic to provide clients with services such as CG images,  CG animations, BIM and 3D products.</p> 
+			<div id="logo">
+				<ul>
+					<li><img src="img/aedas.png" alt="" /></li>
+					<li><img src="img/gensler.png" alt="" /></li>
+					<li><img src="img/bdp.png" alt="" /></li>
+					<li><img src="img/ch2mhill.png" alt="" /></li>
+					<li><img src="img/benoy.png" alt="" /></li>
+					<li><img src="img/sasaki.png" alt="" /></li>
+					<li><img src="img/edsa.png" alt="" /></li>
+					<li><img src="img/kpf.png" alt="" /></li>
+				</ul>
+			</div>
+			<iframe id="iframe2" src="foot.html" width="100%" height="150px" scrolling="no"></iframe>
+			
+		</div>
+ 
+	</body>
+</html>

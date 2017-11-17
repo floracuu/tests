@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="stylesheets/chromagallery.css"/>
+ 
+		<style type="text/css">
+			#lunbo{  
+				padding-top:67.19px;
+				position:relative;
+				overflow:hidden;
+			}
+			#box{  
+				width:300%; 
+			}
+			#box img{
+				width:33.3333%;  
+			}
+			#yd{
+				position:absolute; 
+				display:flex;
+				bottom:10px;
+				left:0;
+				right:0;
+				margin: auto;
+				width:10%;
+				height:3%; 
+				justify-content: space-between;
+			}
+			#yd li{
+				width:15%;
+				height:75%;
+				background:rgba(0,0,0,0.5);
+				border-radius:50%;
+				border:1px solid white;
+			}
+			#yd li:nth-child(1){ 
+				background:ghostwhite;
+			} 
+			#fall{ 
+				padding-top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		 <iframe id="iframe1" src="head.html" width="100%" height="67.19"></iframe>
+		 
+		 <div id="lunbo">
+		 	 <div id="box">
+		 	 	<img src="imgR/Banner (1).jpg"/><img src="imgR/Banner (2).jpg"/><img src="imgR/Banner (3).jpg"/>
+		 	 </div>
+		 	 <div id="yd">
+		 	 	<li></li>
+		 	 	<li></li>
+		 	 	<li></li>
+		 	 </div>
+		 </div>
+		
+		 
+		 <div class="chroma-gallery mygaller" id="fall">
+		 	<img src="imgP/1-150Z1101PH18.jpg" data-largesrc="imgP/1-150Z1101T5U8.jpg"/>
+		 	<img src="imgP/1-150Z1102T4604.jpg" data-largesrc="imgP/1-150Z1102Z4209.jpg"/>
+		 	<img src="imgP/1-150Z110405VP.jpg" data-largesrc="imgP/1-150Z1133Q94S.jpg"/>
+		 	<img src="imgP/1-150Z1135R1917.jpg" data-largesrc="imgP/1-150Z1135TX03.jpg"/>
+		 	<img src="imgP/1-150Z1133KGa.jpg" data-largesrc="imgP/1-150Z1133Q94S.jpg"/>
+		 	<img src="imgP/1-150Z1140H2192.jpg" data-largesrc="imgP/1-150Z1140Q53C.jpg"/>
+		 	<img src="imgP/1-150Z1140T31K.jpg" data-largesrc="imgP/1-150Z1140Z0612.jpg"/>
+		 	<img src="imgP/1-150Z1141J2W6.jpg" data-largesrc="imgP/1-150Z1141QH22.jpg"/>
+		 	<img src="imgP/1-150Z110334W94.jpg" data-largesrc="imgP/1-150Z110342W02.jpg"/>
+		 	<img src="imgP/1-150Z113401J48.jpg" data-largesrc="imgP/1-150Z113403C95.jpg"/>
+		 	<img src="imgP/1-150Z114093R61.jpg" data-largesrc="imgP/1-150Z114095NC.jpg"/>
+		 	<img src="imgP/1-150Z114150N96.jpg" data-largesrc="imgP/1-150Z114152E57.jpg"/>
+		 	<img src="imgP/1-150Z113440VO.jpg" data-largesrc="imgP/1-150Z1134JM27.jpg"/>
+		 	<img src="imgP/1-150Z1135A63M.jpg" data-largesrc="imgP/1-150Z1135I1I6.jpg"/>
+		 	<img src="imgP/1-150Z1103519419.jpg" data-largesrc="imgP/1-150Z1103546234.jpg"/>
+		 	<img src="imgP/1-150Z110313N04.jpg" data-largesrc="imgP/1-150Z1103204a4.jpg"/>
+		 	<img src="imgP/1-150Z114122MC.jpg" data-largesrc="imgP/1-150Z114125a24.jpg"/>
+		 	<img src="imgP/1-150Z113422V07.jpg" data-largesrc="imgP/1-150Z1134304C6.jpg"/> 
+		 </div>
+		 
+		 <iframe  id="iframe2" src="foot.html" frameborder="0" width="100%"></iframe>
+		 <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		  
+		 <script src="scripts/modernizr-chrg.min.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="scripts/imagesloaded.min.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="scripts/masonry.min.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="scripts/chromagallery.js" type="text/javascript" charset="utf-8"></script>
+ 
+		 <script type="text/javascript">
+			function lunbo(){
+				var off=0;
+				var index=0;
+				//点击改变位置
+			 	$("#yd li").click(function(){
+			 		 index = $(this).index(); 
+			 		 off = $(document.body).width()*index*(-1);
+			 		 $("#box"). get(0).style.transform="translateX("+off+"px)";
+			 		 //清除颜色
+			 		  $("#yd li").css("background","rgba(0,0,0,0.5)"); 
+					 $("#yd li").eq(index).css("backgroundColor","ghostwhite");
+			 	});
+			 	//如果窗口大小变化 偏移量应该跟着变化 
+			 	$(window).resize(function(){ 
+//			 		console.log("浏览器大小改变,宽度"+$(this).width()); 
+			 		 off = $(document.body).width()*index*(-1);
+			 		 $("#box"). get(0).style.transform="translateX("+off+"px)";
+			 		
+			 	});
+			 	//自动轮播
+			 	var timeID = setInterval(function(){  
+			 		index++;
+			 		if(index==3)index=0;
+			 		off = $(document.body).width()*index*(-1);
+			 		 $("#box"). get(0).style.transform="translateX("+off+"px)";
+			 		 //清除颜色
+			 		 $("#yd li").css("background","rgba(0,0,0,0.5)"); 
+					 $("#yd li").eq(index).css("backgroundColor","ghostwhite");
+			 	},10000);
+			}
+		 	lunbo();
+		 	
+		 	$(".mygaller").chromaGallery({
+//		 		color:'#000',
+		 		lazyLoad:true,
+		 	});
+		 	
+		 	
+		 </script>
+	</body>
+</html>
